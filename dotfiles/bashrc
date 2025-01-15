@@ -1,0 +1,8 @@
+# redimp/netshell bashrc
+
+export PS1="\w ❯❯ "
+
+if ! test -f /tmp/greeting.$$; then
+  cat /etc/motd
+  touch /tmp/greeting.$$
+fi
