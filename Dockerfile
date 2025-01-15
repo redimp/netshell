@@ -14,8 +14,9 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
     dpkg-reconfigure --frontend=noninteractive locales && \
     update-locale LANG=en_US.UTF-8
 
-ENV LANG en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
+ENV EDITOR=vim
 
 # configure fish
 COPY dotfiles/config.fish /root/.config/fish/config.fish
