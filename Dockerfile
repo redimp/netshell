@@ -7,7 +7,7 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
     locales fish ca-certificates gpg \
     iputils-ping dnsutils iproute2 \
     curl wget jq netcat-openbsd ssh telnet nmap \
-    micro vim \
+    less micro vim \
     tmux screen && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     usermod -s /usr/bin/fish root && \
