@@ -23,6 +23,12 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
     httpie && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
+RUN curl -L -o /usr/local/bin/kubectl "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/$(dpkg --print-architecture)/kubectl" && \
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/$(dpkg --print-architecture)/kubectl.sha256" && \
+    echo "$(cat kubectl.sha256) /usr/local/bin/kubectl" | sha256sum --check && \
+    chmod +x /usr/local/bin/kubectl && \
+    rm -f kubectl.sha256
+
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 ENV EDITOR=vim
