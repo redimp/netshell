@@ -5,7 +5,7 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
     apt-get upgrade -yy && \
     apt-get install -yy --no-install-recommends \
     locales ca-certificates gpg \
-    iputils-ping dnsutils iproute2 \
+    iputils-ping dnsutils iproute2 net-tools tcpdump \
     curl wget jq netcat-openbsd ssh telnet nmap yq \
     less micro vim \
     tmux screen && \
