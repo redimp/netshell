@@ -1,6 +1,10 @@
 # redimp/netshell bashrc
 
-export PS1="\w ❯❯ "
+if [ $(tput colors) -ge 8 ]; then
+  export PS1="\w \[\033[01;34m\]❯\[\033[00m\]❯ "
+else
+  export PS1="\w ❯❯ "
+fi
 
 if ! test -f /tmp/greeting.$$; then
   cat /etc/motd
