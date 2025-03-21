@@ -1,4 +1,4 @@
-FROM debian:12.9-slim
+FROM debian:12-slim
 
 RUN export DEBIAN_FRONTEND=noninteractive; \
     apt-get update -yy && \
