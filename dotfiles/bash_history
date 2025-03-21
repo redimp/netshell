@@ -1,2 +1,8 @@
-ping example.com
+nmap 192.168.1.0/24 -sn
+nmap --top-ports 20 scanme.nmap.org
+openssl s_client -showcerts -connect www.example.com:443 </dev/null | openssl x509 -text
+dig +short example.com
 curl -w "@.curl-timings.txt" -o /dev/null -s https://example.com
+http PUT pie.dev/put name="json example" email=json@example.com
+http -a username:password pie.dev/basic-auth/username/password
+curl https://icanhazip.com
