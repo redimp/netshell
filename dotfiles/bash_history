@@ -9,4 +9,4 @@ http -a username:password pie.dev/basic-auth/username/password
 curl https://icanhazip.com
 tcpdump -i any -s 0 -A 'tcp dst port 8080 and tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x47455420' # capture HTTP GET on 8080
 tcpdump -i any -s 0 -A 'tcp dst port 8080 and tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x504F5354' # capture HTTP POST on 8080
-
+tshark -i any -Y http.request -T fields -e http.host -e http.user_agent -e http.request.full_uri # capture http requests
