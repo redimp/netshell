@@ -43,6 +43,11 @@ Start a one-shot pod for debugging, removed after the shell exists.
 kubectl run tmp-shell --rm -i --tty --image redimp/netshell
 ```
 
+Attach an ephemeral container to an existing pod:
+```bash
+kubectl debug -it --image redimp/netshell pod
+```
+
 ## Alternatives
 
 - [netshoot](https://github.com/nicolaka/netshoot) a Docker + Kubernetes network
