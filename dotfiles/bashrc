@@ -6,6 +6,10 @@ else
   export PS1="\w ❯❯ "
 fi
 
+cheatsh() {
+    curl -s "https://cheat.sh/$1"
+}
+
 if ! test -f /tmp/greeting.$$; then
   cat /etc/motd
   touch /tmp/greeting.$$

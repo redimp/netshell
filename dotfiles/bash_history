@@ -10,4 +10,5 @@ dig +short example.com
 curl -w "@.curl-timings.txt" -o /dev/null -s https://example.com
 http PUT pie.dev/put name="json example" email=json@example.com
 http -a username:password pie.dev/basic-auth/username/password
+cheatsh grep # shortcut for "curl cheat.sh/grep"
 curl https://icanhazip.com
