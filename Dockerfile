@@ -8,7 +8,7 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
     iputils-ping dnsutils iproute2 net-tools tcpdump \
     curl wget jq netcat-openbsd ssh telnet nmap yq \
     less micro vim \
-    tmux screen tshark && \
+    tmux screen tshark swaks && \
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     usermod -s /usr/bin/fish root && \
     sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
