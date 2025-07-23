@@ -27,6 +27,9 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
     echo "deb http://download.opensuse.org/repositories/shells:/fish:/release:/4/Debian_12/ /" > /etc/apt/sources.list.d/shells:fish:release:4.list && \
     apt-get update -yy && \
     apt-get install -yy --no-install-recommends fish && \
+    # prevent fish leaving a <defunct> python3 process haning around
+    # the process is a result of the attempt to generate completions based on man pages (that we don't install)
+    mkdir -p /root/.cache/fish/generated_completions && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sSL -o /usr/local/bin/kubectl "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/$(dpkg --print-architecture)/kubectl" && \
