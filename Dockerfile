@@ -51,6 +51,8 @@ COPY dotfiles/fish_prompt.fish dotfiles/fish_right_prompt.fish \
 COPY dotfiles/bash_history /root/.bash_history
 COPY dotfiles/bashrc /root/.bashrc
 # configure tools / helper
+# vim
+COPY dotfiles/vimrc /root/.vimrc
 # curl timings
 COPY dotfiles/curl-timings.txt /root/.curl-timings.txt
 # motd
